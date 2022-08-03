@@ -160,4 +160,5 @@ router.delete("/logout", isLoggedIn, (req, res) => {
     });
 });
 
+
 module.exports = router;
