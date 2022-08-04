@@ -5,8 +5,14 @@ const serviceSchema = new Schema({
   people: Number,
   price: Number,
   duration: String,
-  place: String,
-  description: String
+  place: {
+    type: String,
+    required: true,
+    trim: true,
+    minLenght: 3
+  },
+  description: String,
+  date: Date
 }
 );
 
