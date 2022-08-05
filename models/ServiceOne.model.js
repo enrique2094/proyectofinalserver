@@ -11,7 +11,7 @@ const serviceSchema = new Schema({
     trim: true,
     minLenght: 3
   },
-  description: String,
+  time: String,
   date: Date
 }
 );

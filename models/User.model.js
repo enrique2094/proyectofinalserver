@@ -5,7 +5,6 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
       unique: true,
       // unique: true -> Ideally, should be unique, but its up to you
     },
@@ -19,6 +18,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+    },
+    role: {
+      type: String,
+      default: "user",
     },
   },
   {

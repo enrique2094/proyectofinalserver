@@ -15,9 +15,9 @@ router.get("/all", (req, res) => {
 // create services using post
 
 router.post("/new", (req, res) => {
-    const { place, description, people, price, duration, date } = req.body;
+    const { place, description, people, price, duration, date, time } = req.body;
 
-    ServiceOne.create({place, description, people, price, duration, date })
+    ServiceOne.create({place, description, people, price, duration, date, time })
     .then(newService => {
         res.json(newService)
     }).catch((err) => console.log(err))
