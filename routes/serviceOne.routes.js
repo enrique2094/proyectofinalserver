@@ -12,6 +12,15 @@ router.get("/all", (req, res) => {
     }) .catch(console.log())
 })
 
+router.get("/:Id", (req, res) => {
+    const { Id } = req.params
+    ServiceOne.findById(Id)
+    .then(allTheServices => {
+        console.log("muestra", allTheServices)
+        res.json(allTheServices)
+    }) .catch(console.log())
+})
+
 // create services using post
 
 router.post("/new", (req, res) => {
