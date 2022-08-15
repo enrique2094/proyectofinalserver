@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const ServiceTwo = require("../models/ServiceTwo.model");
+const ServicesTwo = require("../models/ServiceTwo.model");
 const mongoose = require("mongoose");
 
 // enlistar servicios
 
-router.get("/all", (req, res) => {
-  ServiceTwo.find()
+router.get("/allTwo", (req, res) => {
+  ServicesTwo.find()
     .then((allTheServices) => {
       console.log("show", allTheServices);
       res.json(allTheServices);
@@ -15,10 +15,10 @@ router.get("/all", (req, res) => {
 
 // create services using post
 
-router.post("/new", (req, res) => {
-  const { place, description, people, price, duration, date, time } = req.body;
+router.post("/newTwo", (req, res) => {
+  const { place, people, day } = req.body;
 
-  ServiceTwo.create({ place, description, people, price, duration, date, time })
+  ServicesTwo.create({ place, people, day })
     .then((newService) => {
       res.json(newService);
     })
@@ -27,9 +27,9 @@ router.post("/new", (req, res) => {
 
 // edit using put
 
-router.put("/editour/:Id", (req, res) => {
+router.put("/editourTwo/:Id", (req, res) => {
   const { Id } = req.params;
-  ServiceTwo.findByIdAndUpdate(Id, req.body)
+  ServicesTwo.findByIdAndUpdate(Id, req.body)
     .then((editNewTour) => {
       res.json(editNewTour);
     })
@@ -38,9 +38,9 @@ router.put("/editour/:Id", (req, res) => {
 
 // delete using del
 
-router.delete("/deletetour/:Id", (req, res) => {
+router.delete("/deletetourTwo/:Id", (req, res) => {
   const { Id } = req.params;
-  ServiceTwo.findByIdAndDelete(Id)
+  ServicesTwo.findByIdAndDelete(Id)
     .then((resp) => {
       res.status(200).json({ success: true, msg: "Tour Deleted" });
     })

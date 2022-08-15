@@ -3,8 +3,7 @@ const ObjectId = Schema.Types.ObjectId;
 
 const serviceSchema = new Schema({
   people: Number,
-  price: Number,
-  duration: String,
+  day: String,
   place: {
     type: String,
     required: true,

@@ -1,10 +1,9 @@
 const { Schema, model } = require("mongoose");
 const ObjectId = Schema.Types.ObjectId;
 
-const serviceSchema = new Schema({
+const servicesSchemaTwo = new Schema({
   people: Number,
-  price: Number,
-  duration: String,
+  day: String,
   place: {
     type: String,
     required: true,
@@ -16,6 +15,6 @@ const serviceSchema = new Schema({
 }
 );
 
-const Service = model("Service", serviceSchema);
+const ServicesTwo = model("ServicesTwo", servicesSchemaTwo);
 
-module.exports = Service;
+module.exports = ServicesTwo;
