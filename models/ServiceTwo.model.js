@@ -10,8 +10,6 @@ const servicesSchemaTwo = new Schema({
     trim: true,
     minLenght: 3
   },
-  time: String,
-  date: Date
 }
 );
 

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const ServicesTwo = require("../models/ServiceTwo.model");
 const mongoose = require("mongoose");
 
-// enlistar servicios
+// listing servicios
 
 router.get("/allTwo", (req, res) => {
   ServicesTwo.find()

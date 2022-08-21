@@ -2,12 +2,12 @@ const router = require("express").Router();
 const ServiceOne = require("../models/ServiceOne.model");
 const mongoose = require("mongoose");
 
-// enlistar servicios
+// listing servicios
 
 router.get("/all", (req, res) => {
   ServiceOne.find()
     .then((allTheServices) => {
-      console.log("muestra", allTheServices);
+      console.log("show", allTheServices);
       res.json(allTheServices);
     })
     .catch(console.log());
@@ -16,9 +16,9 @@ router.get("/all", (req, res) => {
 // create services using post
 
 router.post("/new", (req, res) => {
-  const { place, day, time, people } = req.body;
+  const { place, day, people } = req.body;
 
-  ServiceOne.create({ place, day, time, people })
+  ServiceOne.create({ place, day, people })
     .then((newService) => {
       res.json(newService);
     })
